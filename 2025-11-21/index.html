@@ -3,10 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse; 
+        }
+        td, th {
+        padding: 15px;
+        }
+    </style>
     <title>Document</title>
 </head>
 <body>
-    <h1>Prathamesh</h1>
-    <h2>Sawant</h2>
+    <!-- study different tables and forms  -->
+    <table border="1">
+        <caption>Product information</caption>
+        <thead>
+            <tr><th>Product</th><th>Price</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>Book</td><td>$10</td></tr>
+            <tr><td>Pen</td><td>$2</td></tr>
+        </tbody>
+        <tfoot>
+            <tr><td>Total</td><td>$12</td></tr>
+        </tfoot>
+    </table>
+
+    <hr>
+
+    <table border="1">
+        <caption>Student Marksheet</caption>
+        <tr>
+            <th rowspan="2">Name</th>
+            <th colspan="2">Marks</th>
+        </tr>
+        <tr>
+            <th>Math</th>
+            <th>Science</th>
+        </tr>
+        <tr>
+            <td>Ramjan</td>
+            <td>90</td>
+            <td>85</td>
+        </tr>
+        <tr>
+            <td>Prathamesh</td>
+            <td>77</td>
+            <td>75</td>
+        </tr>
+    </table>
+
+
 </body>
 </html>
