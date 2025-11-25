@@ -121,12 +121,12 @@ let str = ["ramjan", "anurag", "yash"];
 function cncat(str){
     let result="";
     for(st of str){
-        result+=st;
+        result+=`${st} `;
     }
     return result;
 }
-// check here - why these TypeError: str is not iterable
-cncat();
+
+console.log(cncat(str));
 
 
 
