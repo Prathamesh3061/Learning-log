@@ -13,7 +13,8 @@ exports.createUser = async(req , res )=>{
     } catch (error) {
         res.status(500).json({
             success:false,
-            message:"User cannot created"
+            message:"User cannot be created",
+            error:error.message
         })
     }
 };
@@ -33,3 +34,51 @@ exports.allUser = async(req, res)=>{
         });
     }
 };
+
+// update user
+exports.updateUser = async(req,res) =>{
+    try {
+        const updateUser = await User.findByIdAndUpdate(req.params.id, req.body, {new:true});
+
+        if(!updateUser){
+            return res.status(404).json({
+                success:false,
+                message:"User not found"
+            })
+        }
+        res.json({
+            success:true,
+            message:"User updated successfully",
+            data:updateUser
+        });
+    } catch (error) {
+        res.status(500).json({
+            success:false,
+            message:error.message
+        }); 
+    }
+}
+
+// get userby id
+exports.getUser = async(req, res) =>{
+    try {
+        const {id} = req.params;
+        const user = await User.findById(id);
+
+        if(!user) {
+            return res.status(404).json({
+                success:false,
+                message:"User not found"
+            });
+        }
+        res.json({
+            success:true,
+            user
+        });
+    } catch (error) {
+        res.status(500).json({
+            success:false,
+            message:error.message
+        });       
+    }
+}
